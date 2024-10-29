@@ -1,6 +1,40 @@
-export interface Weather {
-  current: CurrentWeather;
+export interface WeatherData {
+  current: CurrentWeather | null;
+  forecast: ForecastWeather | null;
 }
+
+export interface ForecastWeather {
+  cod: string;
+  message: number;
+  cnt: number;
+  list: List[];
+  city: City;
+}
+
+export interface List {
+  dt: number;
+  main: Main;
+  weather: Weather[];
+  clouds: Clouds;
+  wind: Wind;
+  visibility: number;
+  pop: number;
+  rain?: Rain;
+  sys: Sys;
+  dt_txt: Date;
+}
+
+export interface City {
+  id: number;
+  name: string;
+  coord: Coord;
+  country: string;
+  population: number;
+  timezone: number;
+  sunrise: number;
+  sunset: number;
+}
+
 export interface CurrentWeather {
   coord: Coord;
   weather: Weather[];
