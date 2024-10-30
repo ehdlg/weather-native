@@ -101,3 +101,11 @@ export interface Geo {
   lat: number;
   lon: number;
 }
+
+export interface GeoResponse {
+  name: string;
+  lon: number;
+  lat: number;
+  country: string;
+  state: string;
+}
